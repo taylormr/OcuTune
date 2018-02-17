@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.miataylor.ocutune.ScrollingActivity"
-    tools:showIn="@layout/activity_scrolling">
+    tools:showIn="@layout/activity_scrolling"
+    tools:ignore="ExtraText"
+    android:background="@color/colorPrimaryDark">
+
+    <!-- TODO: We will put a background image in this file -->
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
+        android:textColor="@color/colorText"
+
         android:text="@string/large_text" />
+
+
 
 </android.support.v4.widget.NestedScrollView>
