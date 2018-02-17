@@ -72,15 +72,29 @@ public class ScrollingActivity extends AppCompatActivity {
             startActivityForResult(takePictureIntent, requestCode);
         }
     }
+    public void openGallery(View view) {
+
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //For open camera
         super.onActivityResult(requestCode, resultCode, data);
         if((this.requestCode == requestCode) && resultCode == RESULT_OK){
             Bitmap bitmap = (Bitmap)data.getExtras().get("data");
             bitmap = getRoundedBitmap(bitmap);
             imageHolder.setImageBitmap(bitmap);
 
+        }
+
+        //For open gallery
+        if (requestCode == PICK_IMAGE) {
+            Uri selectedImage = data.getData();
+            imageHolder.setImageURI(selectedImage);
         }
 
     }
