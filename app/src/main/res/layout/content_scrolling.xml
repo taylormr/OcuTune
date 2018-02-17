@@ -25,7 +25,7 @@
         <!--Camera button, opens camera on click-->
         <ImageButton
             android:id="@+id/camButton"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_gravity="left|center_vertical"
             android:background="@drawable/cam_button_lens"
@@ -36,13 +36,13 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="left|center_vertical"
-            android:background="@drawable/cam_button_lens"
+            android:background="@drawable/default_image_selected"
             android:onClick="openGallery" />
 
         <!--Picture preview, displays current picture being used-->
         <ImageView
             android:id="@+id/picPreview"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="110dp"
             android:layout_marginTop="1dp"
             android:layout_width="90dp"
             android:layout_height="160dp"
