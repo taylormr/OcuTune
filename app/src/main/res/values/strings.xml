@@ -20,4 +20,5 @@
         Here is where Spotify goes.\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="selected_img">Selected Image:</string>
 </resources>

@@ -13,26 +13,35 @@
 
 
 <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:orientation="horizontal">
         <Button
             android:id="@+id/camButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:onClick="openCamera"
-            android:text="CamButton" />
+            android:text="CamButton"
+            android:paddingHorizontal="10dp"
+            />
+
+        <TextView
+            android:id="@+id/selectedImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeTextType="uniform"
+            android:text="@string/selected_img"
+            android:background="@color/colorText"
+            />
 
         <ImageView
             android:id="@+id/picPreview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
             android:src="@mipmap/ic_launcher"/>
     </LinearLayout>
 
