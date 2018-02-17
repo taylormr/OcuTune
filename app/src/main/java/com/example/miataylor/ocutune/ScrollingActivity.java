@@ -1,6 +1,9 @@
 package com.example.miataylor.ocutune;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
@@ -10,10 +13,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class ScrollingActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    private static final int CAMERA_REQUEST = 1888;
+    private ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +60,13 @@ public class ScrollingActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            this.imageView = (ImageView)this.findViewById(R.id.picPreview);
+            imageView.setImageBitmap(photo);
+        }
+    }
 
 }
