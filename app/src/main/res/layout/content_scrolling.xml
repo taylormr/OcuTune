@@ -11,7 +11,28 @@
     android:background="@color/colorPrimaryDark">
 
     <!-- TODO: We will put a background image in this file -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/camButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="CamButton" />
 
+        <ImageView
+            android:id="@+id/picPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:src="@mipmap/ic_launcher"/>
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -21,6 +42,6 @@
 
         android:text="@string/large_text" />
 
-
+</LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
