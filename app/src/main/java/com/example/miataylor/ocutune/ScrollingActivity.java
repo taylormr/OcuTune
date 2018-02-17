@@ -3,6 +3,7 @@ package com.example.miataylor.ocutune;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -62,11 +63,9 @@ public class ScrollingActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            this.imageView = (ImageView)this.findViewById(R.id.picPreview);
-            imageView.setImageBitmap(photo);
-        }
+        ImageView mImageView;
+        mImageView = (ImageView) findViewById(R.id.picPreview);
+        mImageView.setImageBitmap(BitmapFactory.decodeFile("pathToImageFile"));
     }
 
 }
