@@ -1,40 +1,7 @@
 <resources>
     <string name="app_name">OcuTune</string>
     <string name="large_text">
-        "Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n
-        Here is where Spotify goes.\n"
+        Test
     </string>
     <string name="action_settings">Settings</string>
     <string name="selected_img">Selected Image:</string>

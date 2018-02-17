@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+
     tools:context="com.example.miataylor.ocutune.ScrollingActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -19,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
+            android:visibility="visible"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
@@ -28,8 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
+                app:layout_collapseParallaxMultiplier="1.0"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
-
 
 
         </android.support.design.widget.CollapsingToolbarLayout>
