@@ -1,20 +1,22 @@
 package com.example.miataylor.ocutune;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -63,9 +65,13 @@ public class ScrollingActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ImageView mImageView;
-        mImageView = (ImageView) findViewById(R.id.picPreview);
-        mImageView.setImageBitmap(BitmapFactory.decodeFile("pathToImageFile"));
+
+
+
+
+
     }
+    
+
 
 }
