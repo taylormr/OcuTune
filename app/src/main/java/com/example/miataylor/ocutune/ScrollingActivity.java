@@ -49,7 +49,7 @@ public class ScrollingActivity extends AppCompatActivity {
     private void initCollapsingToolbar() {
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        collapsingToolbar.setTitle("");
+        collapsingToolbar.setTitle("  ");
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
         appBarLayout.setExpanded(true);
 
@@ -67,7 +67,7 @@ public class ScrollingActivity extends AppCompatActivity {
                     collapsingToolbar.setTitle("OcuTune");
                     isShow = true;
                 } else if (isShow) {
-                    collapsingToolbar.setTitle("OcuTune");
+                    collapsingToolbar.setTitle("   ");
                     isShow = false;
                 }
             }
