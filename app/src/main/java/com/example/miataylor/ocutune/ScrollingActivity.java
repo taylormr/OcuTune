@@ -69,7 +69,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE_SECURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, requestCode);
+            startActivityForResult(Intent.createChooser(takePictureIntent,"Select Picture"), requestCode);
         }
     }
     public void openGallery(View view) {
