@@ -20,10 +20,11 @@ import java.io.File;
 
 public class ScrollingActivity extends AppCompatActivity {
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-    private static final int CAMERA_REQUEST = 1888;
-    private ImageView imageView;
 
+
+
+    private ImageView imageHolder;
+    private final int requestCode = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,9 @@ public class ScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        imageHolder = (ImageView)findViewById(R.id.picPreview);
     }
 
     @Override
@@ -59,7 +63,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE_SECURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            startActivityForResult(takePictureIntent, requestCode);
         }
     }
 
@@ -67,11 +71,15 @@ public class ScrollingActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
-
+        super.onActivityResult(requestCode, resultCode, data);
+        if(this.requestCode == requestCode && resultCode == RESULT_OK){
+            Bitmap bitmap = (Bitmap)data.getExtras().get("data");
+            imageHolder.setImageBitmap(bitmap);
+        }
 
 
     }
-    
+
 
 
 }
