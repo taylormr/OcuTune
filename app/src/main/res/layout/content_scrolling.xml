@@ -13,7 +13,7 @@
 
 
 <LinearLayout
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     <LinearLayout
@@ -28,23 +28,28 @@
             android:layout_marginRight="82dp"
             android:onClick="openCamera"
             android:src="@mipmap/ic_launcher"
+            android:background="@drawable/rounded_rectangle"
+
 
             />
 
         <TextView
             android:id="@+id/selectedImg"
-            android:layout_width="102dp"
-            android:layout_height="20dp"
-            android:layout_marginHorizontal="20dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:text="@string/selected_img"
-            android:background="@color/colorText"
+            android:textColor="@color/colorText"
+            android:gravity="center"
+            android:background="@drawable/rounded_rectangle"
+
             />
 
         <ImageView
             android:id="@+id/picPreview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/rounded_rectangle"
             android:src="@mipmap/ic_launcher"/>
 
 
@@ -56,10 +61,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:layout_margin="@dimen/text_margin"
         android:textColor="@color/colorText"
-
-        android:text="@string/large_text" />
+        android:text="@string/large_text"
+        android:background="@drawable/rounded_rectangle"/>
 
 
 </LinearLayout>
