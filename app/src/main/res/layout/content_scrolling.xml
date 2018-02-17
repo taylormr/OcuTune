@@ -36,7 +36,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="left|center_vertical"
-            android:background="@drawable/default_image_selected"
+            android:background="@drawable/gallery_button"
             android:onClick="openGallery" />
 
         <!--Picture preview, displays current picture being used-->
