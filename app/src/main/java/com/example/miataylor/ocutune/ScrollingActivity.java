@@ -21,6 +21,7 @@ import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -85,16 +86,23 @@ public class ScrollingActivity extends AppCompatActivity {
         //For open camera
         super.onActivityResult(requestCode, resultCode, data);
         if((this.requestCode == requestCode) && resultCode == RESULT_OK){
-            Bitmap bitmap = (Bitmap)data.getExtras().get("data");
-            bitmap = getRoundedBitmap(bitmap);
-            imageHolder.setImageBitmap(bitmap);
+            Bitmap bitmapCamera = (Bitmap)data.getExtras().get("data");
+            bitmapCamera = getRoundedBitmap(bitmapCamera);
+            imageHolder.setImageBitmap(bitmapCamera);
 
         }
 
         //For open gallery
         if (requestCode == PICK_IMAGE) {
             Uri selectedImage = data.getData();
-            imageHolder.setImageURI(selectedImage);
+            try {
+                Bitmap bitmapGallery = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
+                bitmapGallery = getRoundedBitmap(bitmapGallery);
+                imageHolder.setImageBitmap(bitmapGallery);
+            }
+            catch (IOException e){
+                System.out.print("Err");
+            }
         }
 
     }
@@ -106,7 +114,7 @@ public class ScrollingActivity extends AppCompatActivity {
         paint.setShader(shader);
         paint.setAntiAlias(true);
         Canvas c = new Canvas(circleBitmap);
-        c.drawCircle(bitmap.getWidth()/2, bitmap.getHeight()/2, bitmap.getWidth()/2, paint);
+        c.drawCircle(bitmap.getWidth()/2, bitmap.getHeight()/2, bitmap.getWidth(), paint);
         return circleBitmap;
     }
 
