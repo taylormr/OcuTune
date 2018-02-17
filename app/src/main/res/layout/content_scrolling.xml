@@ -9,8 +9,10 @@
     tools:showIn="@layout/activity_scrolling"
     tools:ignore="ExtraText"
     android:background="@color/colorPrimaryDark">
-
     <!-- TODO: We will put a background image in this file -->
+
+
+
 
 
     <TextView
@@ -20,7 +22,6 @@
         android:textColor="@color/colorText"
 
         android:text="@string/large_text" />
-
 
 
 </android.support.v4.widget.NestedScrollView>
