@@ -29,6 +29,8 @@ public class ScrollingActivity extends AppCompatActivity {
 
     private ImageView imageHolder;
     private final int requestCode = 20;
+    private final int PICK_IMAGE = 1;
+    private String imagePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,15 +75,13 @@ public class ScrollingActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-
         super.onActivityResult(requestCode, resultCode, data);
-        if(this.requestCode == requestCode && resultCode == RESULT_OK){
+        if((this.requestCode == requestCode) && resultCode == RESULT_OK){
             Bitmap bitmap = (Bitmap)data.getExtras().get("data");
             bitmap = getRoundedBitmap(bitmap);
             imageHolder.setImageBitmap(bitmap);
-        }
 
+        }
 
     }
 
@@ -95,6 +95,7 @@ public class ScrollingActivity extends AppCompatActivity {
         c.drawCircle(bitmap.getWidth()/2, bitmap.getHeight()/2, bitmap.getWidth()/2, paint);
         return circleBitmap;
     }
+
 
 
 
