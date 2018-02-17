@@ -10,6 +10,8 @@
     tools:ignore="ExtraText"
     android:background="@color/colorPrimaryDark">
     <!-- TODO: We will put a background image in this file -->
+
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,6 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:onClick="openCamera"
             android:text="CamButton" />
 
         <ImageView
