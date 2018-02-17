@@ -11,15 +11,18 @@
     android:background="@color/colorPrimaryDark">
     <!-- TODO: We will put a background image in this file -->
 
-
+    <!--Vertical layout contains buttons and Spotify-->
 <LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <!--Horizontal layout, has cam button, "selected img", and pic prev-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="horizontal">
+        <!--Camera button, opens camera on click-->
         <ImageButton
             android:id="@+id/camButton"
             android:layout_width="80dp"
@@ -29,10 +32,8 @@
             android:onClick="openCamera"
             android:src="@mipmap/ic_launcher"
             android:background="@drawable/rounded_rectangle"
-
-
             />
-
+        <!--Selected image text, shows user where selected img is-->
         <TextView
             android:id="@+id/selectedImg"
             android:layout_width="120dp"
@@ -44,7 +45,7 @@
             android:background="@drawable/rounded_rectangle"
 
             />
-
+        <!--Picture preview, displays current picture being used-->
         <ImageView
             android:id="@+id/picPreview"
             android:layout_width="match_parent"
@@ -57,7 +58,7 @@
 
 
 
-
+    <!--Where Spotify will go, just a placeholder-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
