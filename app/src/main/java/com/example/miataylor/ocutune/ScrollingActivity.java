@@ -33,7 +33,6 @@ public class ScrollingActivity extends AppCompatActivity {
     private ImageView imageHolder;
     private final int requestCode = 20;
     private final int PICK_IMAGE = 1;
-    private String imagePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +44,12 @@ public class ScrollingActivity extends AppCompatActivity {
 
         imageHolder = (ImageView)findViewById(R.id.picPreview);
         initCollapsingToolbar();
+      //  setTitle(R.string.app_name);
     }
     private void initCollapsingToolbar() {
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        collapsingToolbar.setTitle(" ");
+        collapsingToolbar.setTitle("");
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
         appBarLayout.setExpanded(true);
 
@@ -64,10 +64,10 @@ public class ScrollingActivity extends AppCompatActivity {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle("Your app title");
+                    collapsingToolbar.setTitle("OcuTune");
                     isShow = true;
                 } else if (isShow) {
-                    collapsingToolbar.setTitle(" ");
+                    collapsingToolbar.setTitle("OcuTune");
                     isShow = false;
                 }
             }
