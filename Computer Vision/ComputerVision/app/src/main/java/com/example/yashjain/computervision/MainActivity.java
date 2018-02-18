@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,18 +46,17 @@ public class MainActivity extends AppCompatActivity {
 
     public VisionServiceClient visionServiceClient = new VisionServiceRestClient("b128909fed35443f9c1831cc16793582", "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0");
     ImageView imageView;
-    Button btnprocess;
+    ImageButton btnprocess;
     Bitmap mBitmap;
-
+    final int requestCode = 20;
+    final int PICK_IMAGE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button selectButton = (Button) findViewById(R.id.btnSelect);
-
+        ImageButton selectButton = (ImageButton) findViewById(R.id.btnSelect);
         selectButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
 
@@ -67,10 +67,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton cameraButton = (ImageButton) findViewById(R.id.btnCamera);
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE_SECURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(Intent.createChooser(takePictureIntent,"Select Picture"), requestCode);
+                }
+            }
+        });
+
 
         // This is where we get the image from the user once they have pressed the button.
         imageView = (ImageView) findViewById(R.id.imageView);
-        btnprocess = (Button) findViewById(R.id.btnProcess);
+        btnprocess = (ImageButton) findViewById(R.id.btnProcess);
         btnprocess.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -118,13 +130,15 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (analysisResult != null) {
-                    TextView textView = (TextView) findViewById(R.id.textDescription);
+                    TextView textView = (TextView) findViewById(R.id.spotify);
                     StringBuilder stringbuilder = new StringBuilder();
                     if (analysisResult.tags != null) {
                         for (Tag tag : analysisResult.tags) {
                             stringbuilder.append(tag.name + ", ");
                         }
+
                         textView.setText(stringbuilder);
+
                     } else {
                         textView.setText("No Tags available");
                     }
@@ -143,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //Yash
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
@@ -161,6 +176,27 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             // An Error
+        }
+        //Mia
+        //For open camera
+        if((this.requestCode == requestCode) && resultCode == RESULT_OK){
+            Bitmap bitmapCamera = (Bitmap)data.getExtras().get("data");
+            //bitmapCamera = getRoundedBitmap(bitmapCamera);
+            imageView.setImageBitmap(bitmapCamera);
+
+        }
+
+        //For open gallery
+        if (requestCode == PICK_IMAGE) {
+            Uri selectedImage = data.getData();
+            try {
+                Bitmap bitmapGallery = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
+                //bitmapGallery = getRoundedBitmap(bitmapGallery);
+                imageView.setImageBitmap(bitmapGallery);
+            }
+            catch (IOException e){
+                System.out.print("Err");
+            }
         }
     }
 }
