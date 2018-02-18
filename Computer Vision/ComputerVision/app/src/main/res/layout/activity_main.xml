@@ -58,7 +58,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="15dp"
         android:layout_below="@id/btnSelect"
-        android:src="@drawable/default_image_selected" />
+        android:src="@drawable/go_button" />
 
 
 
@@ -67,6 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/btnSelect"
+
         android:text="Description:" />
 
     <TextView
@@ -74,6 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnProcess"
+        android:layout_marginTop="5dp"
         android:text="Upload a picture to discover tunes!"
         android:textColor="@color/colorAccent"
         />
