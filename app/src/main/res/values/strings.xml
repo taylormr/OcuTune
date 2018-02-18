@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">OcuTune</string>
     <string name="large_text">
-        Test
+        Test\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\n
     </string>
     <string name="action_settings">Settings</string>
     <string name="selected_img">Selected Image:</string>
