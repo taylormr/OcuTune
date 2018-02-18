@@ -18,7 +18,19 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
 dependencies {
+    compile 'com.spotify.android:auth:1.0.0-alpha'
+    compile 'com.spotify.sdk:spotify-player-24-noconnect-2.20b@aar'
+    compile 'com.github.kaaes:spotify-web-api-android:0.4.1'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'

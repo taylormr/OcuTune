@@ -63,11 +63,20 @@
         android:text="Description:" />
 
     <TextView
-        android:id="@+id/spotify"
+        android:id="@+id/pretext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnProcess"
-        android:text="Tiggity text"
+        android:text="Upload a picture to discover tunes!"
         android:textColor="@color/colorAccent"
         />
+
+    <WebView
+        android:id="@+id/spotify_embed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/pretext"
+        android:layout_gravity="center" />
+
 </RelativeLayout>
