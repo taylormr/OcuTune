@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
     public String html_end = "</div>";
     public final String I_START = "<iframe src=\"https://open.spotify.com/embed/track/";
     public final String I_END = "\"\nwidth=\"100%\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\"></iframe>";
-    public String[] samples = {"45pvLeeK3mcKz1O8hPmYMX", "45pvLeeK3mcKz1O8hPmYMX", "45pvLeeK3mcKz1O8hPmYMX", "45pvLeeK3mcKz1O8hPmYMX", "45pvLeeK3mcKz1O8hPmYMX", "45pvLeeK3mcKz1O8hPmYMX"};
+    public String[] samples = {"OmcAT5Y8eg5bUPv9qJT4R","6tHWl8ows5JOZq9Yfaqn3M","3Vo4wInECJQuz9BIBMOu8i","09IStsImFySgyp0pIQdqAc","0tgVpDi06FyKpA1z0VMD4v","5hM6sP0Gh1jD57drszNueC","51rXHuKN8Loc4sUlKPODgH","2xmrfQpmS2iJExTlklLoAL","7vGuf3Y35N4wmASOKLUVVU","6NWl2m8asvH83xjuXVNsuG","5Z3GHaZ6ec9bsiI5BenrbY","1LhMopPAallLeaeNutqbgS","6n4U3TlzUGhdSFbUUhTvLP","71T7xF5wLbDRg76jxAwDqA","2MMvonKGALz6YOJwaKDO3q","31MkGwj0SWgZaTvEt5Hgxv","7eFmN6wnsb7WowRKAqRFfs","6tHWl8ows5JOZq9Yfaqn3M","1USJRpWDFhxwhCajPXBeel","5lFbGMt9ZYPvnWvWeimvkW"};
 
     public VisionServiceClient visionServiceClient = new VisionServiceRestClient("b128909fed35443f9c1831cc16793582", "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0");
     ImageView imageView;
@@ -229,14 +229,14 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                     StringBuilder stringbuilder = new StringBuilder();
                     if (analysisResult.tags != null) {
                         for (Tag tag : analysisResult.tags) {
-                            if(!tag.name.equals("indoor")) {
+                            if(!tag.name.equals("indoor") && !tag.name.equals("outdoor") && !tag.name.equals("wall") && !tag.name.equals("ground") && !tag.name.equals("floor") && !tag.name.equals("person") && !tag.name.equals("man") && !tag.name.equals("woman") && !tag.name.equals("ceiling")) {
                                 stringbuilder.append(tag.name + ", ");
                             }
                             else{
                                 clone.add(tag);
                             }
                         }
-                        if(clone.size() > 0){
+                        while(clone.size() > 0){
                             analysisResult.tags.remove(clone.get(0));
                             clone.remove(0);
                         }
@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                                 TracksPager tracks3 = spotify.searchTracks(analysisResult.tags.get(2).name);
                                 html += I_START + tracks3.tracks.items.get(0).id + I_END;
                             }
-                            Toast.makeText(MainActivity.this, "TRACKS FOUND!!!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "TRACKS FOUND!!!", Toast.LENGTH_SHORT).show();
                             html += html_end;
 
                             textView.setText("");
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                         textView.setText("No Tags available");
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "Something went wrong. That's all I know...", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Something went wrong. That's all I know...", Toast.LENGTH_SHORT).show();
 
                     //Naman
                     //When Computer Vision fails
@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                     }
                     html += html_end;
 
-                    textView.setText("CV failed");
+                    //textView.setText("CV failed");
                     mSpotifyEmbed.loadData(html, "text/html", null);
                     //end Naman
 
