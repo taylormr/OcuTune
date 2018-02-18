@@ -81,8 +81,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
     public static final int TRACK_LIMIT = 3;
 
     private static final int IMAGE_REQUEST_CODE = 1;
-    public String pre_html = "<div style=\"background-color:#000000;\">";
-    public String html = pre_html;
+    public final String pre_html = "<div>";
     public String html_end = "</div>";
     public final String I_START = "<iframe src=\"https://open.spotify.com/embed/track/";
     public final String I_END = "\"\nwidth=\"100%\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\"></iframe>";
@@ -237,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                                 clone.add(tag);
                             }
                         }
-                        while(clone.size() > 0){
+                        if(clone.size() > 0){
                             analysisResult.tags.remove(clone.get(0));
                             clone.remove(0);
                         }
@@ -251,6 +250,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                             SpotifyService spotify = api.getService();
 
                             Log.d("BEFORE_TRACK", "HELLO WORLD");
+                            String html = "<div style=\"background-color:#000000;\">";
                             if(analysisResult.tags.size() > 0) {
                                 TracksPager tracks = spotify.searchTracks(analysisResult.tags.get(0).name);
                                 html += I_START + tracks.tracks.items.get(0).id + I_END;
@@ -268,10 +268,9 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
 
                             textView.setText("");
                             mSpotifyEmbed.loadData(html, "text/html", null);
-                            html = pre_html;
-
                         }
                         else{
+                            String html = "<div style=\"background-color:#000000;\">";
                             for(int i = 0; i < 3; i++){
                                 int random = (int) (Math.random() * samples.length);
                                 html += I_START + samples[random] + I_END;
@@ -281,7 +280,6 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
 
                             textView.setText("No tags...");
                             mSpotifyEmbed.loadData(html, "text/html", null);
-                            html = pre_html;
                         }
                         //end Naman
 
@@ -296,7 +294,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
 
                     //Naman
                     //When Computer Vision fails
-
+                    String html = "<div>";
                     for(int i = 0; i < 3; i++){
                         int random = (int) (Math.random() * samples.length);
                         html += I_START + samples[random] + I_END;
@@ -305,7 +303,6 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
 
                     textView.setText("CV failed");
                     mSpotifyEmbed.loadData(html, "text/html", null);
-
                     //end Naman
 
                 }
