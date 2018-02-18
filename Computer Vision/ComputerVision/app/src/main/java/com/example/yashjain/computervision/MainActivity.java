@@ -278,7 +278,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                             html += html_end;
 
 
-                            textView.setText("No tags...");
+                            textView.setText("");
                             mSpotifyEmbed.loadData(html, "text/html", null);
                         }
                         //end Naman
@@ -287,7 +287,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
 
 
                     } else {
-                        textView.setText("No Tags available");
+                        textView.setText("");
                     }
                 } else {
                     //Toast.makeText(MainActivity.this, "Something went wrong. That's all I know...", Toast.LENGTH_SHORT).show();
@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                     }
                     html += html_end;
 
-                    //textView.setText("CV failed");
+                    textView.setText("");
                     mSpotifyEmbed.loadData(html, "text/html", null);
                     //end Naman
 
