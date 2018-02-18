@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                             SpotifyService spotify = api.getService();
 
                             Log.d("BEFORE_TRACK", "HELLO WORLD");
-                            String html = "<div style=\"background-color:#000000;\">";
+                            String html = "<div>";
                             if(analysisResult.tags.size() > 0) {
                                 TracksPager tracks = spotify.searchTracks(analysisResult.tags.get(0).name);
                                 html += I_START + tracks.tracks.items.get(0).id + I_END;
@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                             mSpotifyEmbed.loadData(html, "text/html", null);
                         }
                         else{
-                            String html = "<div style=\"background-color:#000000;\">";
+                            String html = "<div>";
                             for(int i = 0; i < 3; i++){
                                 int random = (int) (Math.random() * samples.length);
                                 html += I_START + samples[random] + I_END;
