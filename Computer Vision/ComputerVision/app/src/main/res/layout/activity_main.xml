@@ -16,11 +16,18 @@
 
 
 
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_resized"/>
+
+
     <!--Picture preview, displays current picture being used-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_marginLeft="270dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="100dp"
         android:layout_width="90dp"
         android:layout_height="160dp"
         android:src="@drawable/blank_canvas"
@@ -30,17 +37,17 @@
 
     <ImageButton
         android:id="@+id/btnCamera"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="130dp"
         android:background="@drawable/cam_button_lens" />
 
     <ImageButton
         android:id="@+id/btnSelect"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="120dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginLeft="90dp"
         android:background="@drawable/gallery_button" />
      <!--   android:onClick="openCamera" /> -->
 
