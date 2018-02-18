@@ -229,14 +229,14 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                     StringBuilder stringbuilder = new StringBuilder();
                     if (analysisResult.tags != null) {
                         for (Tag tag : analysisResult.tags) {
-                            if(!tag.name.equals("indoor")) {
+                            if(!tag.name.equals("indoor") && !tag.name.equals("outdoor") && !tag.name.equals("wall") && !tag.name.equals("ground") && !tag.name.equals("floor") && !tag.name.equals("person") && !tag.name.equals("man") && !tag.name.equals("woman") && !tag.name.equals("ceiling")) {
                                 stringbuilder.append(tag.name + ", ");
                             }
                             else{
                                 clone.add(tag);
                             }
                         }
-                        if(clone.size() > 0){
+                        while(clone.size() > 0){
                             analysisResult.tags.remove(clone.get(0));
                             clone.remove(0);
                         }
@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                                 TracksPager tracks3 = spotify.searchTracks(analysisResult.tags.get(2).name);
                                 html += I_START + tracks3.tracks.items.get(0).id + I_END;
                             }
-                            Toast.makeText(MainActivity.this, "TRACKS FOUND!!!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "TRACKS FOUND!!!", Toast.LENGTH_SHORT).show();
                             html += html_end;
 
                             textView.setText("");
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                         textView.setText("No Tags available");
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "Something went wrong. That's all I know...", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Something went wrong. That's all I know...", Toast.LENGTH_SHORT).show();
 
                     //Naman
                     //When Computer Vision fails
@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity implements SpotifyPlayer.Not
                     }
                     html += html_end;
 
-                    textView.setText("CV failed");
+                    //textView.setText("CV failed");
                     mSpotifyEmbed.loadData(html, "text/html", null);
                     //end Naman
 
