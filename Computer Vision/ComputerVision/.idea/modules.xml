@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ComputerVision.iml" filepath="$PROJECT_DIR$/ComputerVision.iml" />
+      <module fileurl="file://C:\Users\Nathan Kennedy\Desktop\OcuTune\Computer Vision\ComputerVision\ComputerVision.iml" filepath="C:\Users\Nathan Kennedy\Desktop\OcuTune\Computer Vision\ComputerVision\ComputerVision.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Nathan Kennedy\Desktop\OcuTune\Computer Vision\ComputerVision\app\app.iml" filepath="C:\Users\Nathan Kennedy\Desktop\OcuTune\Computer Vision\ComputerVision\app\app.iml" />
     </modules>
   </component>
 </project>
