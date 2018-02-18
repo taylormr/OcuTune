@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop = "16dp"
-    android:background="@drawable/background"
+    android:background="@drawable/new_background"
+    android:orientation="vertical"
 
 
     tools:context="com.example.yashjain.computervision.MainActivity">
 
 
-
-
     <ImageView
-        android:layout_gravity="center_horizontal"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_resized"/>
+        android:layout_width="1750dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_resized" />
 
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="horizontal" >
     <!--Picture preview, displays current picture being used-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_marginLeft="270dp"
-        android:layout_marginTop="100dp"
         android:layout_width="90dp"
         android:layout_height="160dp"
         android:src="@drawable/blank_canvas"
-        android:layout_gravity="center"
         android:background="@drawable/rounded_rectangle"
         android:padding="5px"/>
 
@@ -39,15 +35,12 @@
         android:id="@+id/btnCamera"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="130dp"
         android:background="@drawable/cam_button_lens" />
 
     <ImageButton
         android:id="@+id/btnSelect"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginTop="155dp"
-        android:layout_marginLeft="90dp"
         android:background="@drawable/gallery_button" />
      <!--   android:onClick="openCamera" /> -->
 
@@ -55,18 +48,14 @@
         android:id="@+id/btnProcess"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_below="@id/btnSelect"
         android:src="@drawable/default_image_selected" />
 
-
+</LinearLayout>
 
     <TextView
         android:id="@+id/textDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/btnSelect"
         android:text="Description:" />
 
     <TextView
@@ -82,8 +71,6 @@
         android:id="@+id/spotify_embed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/pretext"
         android:layout_gravity="center" />
 
-</RelativeLayout>
+</LinearLayout>
